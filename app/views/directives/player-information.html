@@ -1,0 +1,14 @@
+<div class="content" ng-class="{active:active}">
+  <div class="name">{{player.playerName}}</div>
+  <div class="total">
+    {{total}}
+    <div class="result-overlay bust" ng-if="bust">Bust</div>
+    <div class="result-overlay win" ng-if="win">Win</div>
+    <div class="result-overlay lose" ng-if="lose">Lose</div>
+    <div class="result-overlay draw" ng-if="draw">Draw</div>
+  </div>
+  <div class="cards">
+    <div class="heading">cards</div>
+    <span class="card" ng-repeat="card in player.cards">{{card.toString()}}</span>
+  </div>
+</div>

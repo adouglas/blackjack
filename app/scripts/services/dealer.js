@@ -48,9 +48,9 @@ angular.module('blackjackApp')
     };
 
     // Evaluate the players current total
-    this.evaluatePlayer = function(){
+    this.evaluatePlayer = function(player){
       // Get the current player (we could do this when changing the active seat, but we will do it here)
-      var player = game.getPlayerAtSeat(activeSeat);
+      var player = player || game.getPlayerAtSeat(activeSeat);
       var total = 0;
       var aceCount = 0;
       var tmp;
@@ -77,10 +77,20 @@ angular.module('blackjackApp')
     this.playDealer = function(){
       activeSeat = game.getSeatCount()-1;
 
+      var player = game.getPlayerAtSeat(activeSeat);
+      // Reveil the dealers 2nd card
+      player.cards.push(game.getDealer2ndCard());
+
       // Dirty expensive way to play as the dealer but simple
       while(self.evaluatePlayer() < 16){
         self.playerHits();
       }
 
+    };
+
+    // Return the dealer score
+    this.getDealerScore = function(){
+      var player = game.getPlayerAtSeat(game.getSeatCount()-1);
+      return self.evaluatePlayer(player);
     };
   });

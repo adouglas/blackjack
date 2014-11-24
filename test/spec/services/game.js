@@ -12,8 +12,8 @@ describe('Service: game', function () {
     game.newGame();
   }));
 
-  it('should by default have 8 players (inc the dealer)', function () {
-    expect(game.getSeatCount()).toBe(8);
+  it('should by default have 9 players (inc the dealer)', function () {
+    expect(game.getSeatCount()).toBe(9);
   });
 
   it('should deal 2 cards to all seats', function () {

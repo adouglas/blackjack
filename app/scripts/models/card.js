@@ -46,7 +46,40 @@ Card.Value = {
 
 // Define a textual representation for a card
 Card.prototype.toString = function() {
-  return this.rank.toString() + ' of ' + this.suit.toString();
+
+  var s, r;
+  switch (this.suit) {
+    case 1:
+      s = '♣';
+      break;
+    case 2:
+      s = '♦';
+      break;
+    case 3:
+      s = '♥';
+      break;
+    case 4:
+      s = '♠';
+      break;
+  }
+  switch (this.rank) {
+    case 11:
+      r = 'J';
+      break;
+    case 12:
+      r = 'Q';
+      break;
+    case 13:
+      r = 'K';
+      break;
+    case 14:
+      r = 'A';
+      break;
+    default:
+      r = this.rank;
+      break;
+  }
+  return r+s;
 };
 
 // Compare the value of two cards

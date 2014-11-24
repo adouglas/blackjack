@@ -1,0 +1,77 @@
+body
+  background: #455269
+  .navbar-fixed-bottom
+    background: #364254
+    border: 0
+    min-height: 60px
+    .information
+      background: #F3F3F3
+      min-height: 50px
+      margin-top: 5px
+      margin-bottom: 5px
+      width: 100%
+      padding: 2px 2px 2px 7px
+      font-size: 24pt
+      text-align: center
+    .buttons
+      margin-top: 7px
+      margin-bottom: 7px
+      text-align: center
+  player-information
+    .content
+      box-sizing: border-box
+      box-shadow: 0 0 2px #313a4a
+      border-top: 1px solid #596b87
+      border-left: 1px solid #596b87
+      border-bottom: none
+      min-height: 180px
+      background: #4f5f78
+      margin-bottom: 15px
+      margin-top: 15px
+      text-align: center
+      .name
+        color: lightgray
+        font-size: 16pt
+      .total
+        color: #e1e1e1
+        font-size: 60pt
+        font-weight: lighter
+        .result-overlay
+          position: absolute
+          top: 45px
+          left: 15px
+          min-width: 213px
+          text-align: center
+          font-weight: bold
+          background: #364254
+          opacity: 0.87
+          &.win
+            color: green
+          &.bust
+            color: red
+          &.lose
+            color: red
+          &.draw
+            color: black
+      .cards
+        background: #364254
+        position: absolute
+        left: 15px
+        width: 213px
+        bottom: 15px
+        text-align: left
+        padding-left: 3px
+        padding-bottom: 1px
+        .heading
+          text-align: left
+          font-size: small
+          color: lightgray
+          font-weight: lighter
+        .card
+          color: #939ba9
+          margin-left: 3px
+          margin-right: 3px
+      &.active
+        .name
+          font-weight: bolder
+          text-decoration: underline
