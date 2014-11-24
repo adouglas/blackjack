@@ -2,11 +2,11 @@ blackjack
 =========
 
 # Installation
-```npm install'''
+```npm install```
 
 # Run tests
-```grunt test'''
+```grunt test```
 
 # Run server
 For the frontend
-```grunt server'''
+```grunt server```
