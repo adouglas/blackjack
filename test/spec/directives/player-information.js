@@ -13,8 +13,8 @@ describe('Directive: playerInformation', function () {
   }));
 
   it('should make hidden element visible', inject(function ($compile) {
-    // element = angular.element('<player-information></player-information>');
-    // element = $compile(element)(scope);
+    element = angular.element('<player-information></player-information>');
+    element = $compile(element)(scope);
     // expect(element.text()).toBe('player');
   }));
 });

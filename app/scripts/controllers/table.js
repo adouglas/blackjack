@@ -14,7 +14,9 @@ angular.module('blackjackApp')
 
     $scope.range = function(min, max){
       var input = [];
-      for (var i = min; i <= max; i++) input.push(i);
+      for (var i = min; i <= max; i++) {
+        input.push(i);
+      }
       return input;
     };
 
@@ -23,6 +25,7 @@ angular.module('blackjackApp')
         $scope.seatCount = game.getSeatCount();
         $scope.game = game;
         $scope.count = 0;
-    }
+    };
+    
     init();
   });

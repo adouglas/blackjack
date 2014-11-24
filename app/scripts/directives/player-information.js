@@ -26,7 +26,7 @@ angular.module('blackjackApp')
 
       $rootScope.$on('update_table',function(){
         // Hacky way to do this but fine for now
-        if(game.getPlayerAtSeat(dealer.currentSeatNum()).playerName == $scope.player.playerName){
+        if(game.getPlayerAtSeat(dealer.currentSeatNum()).playerName === $scope.player.playerName){
           $scope.active = true;
         }
         else{
@@ -35,12 +35,14 @@ angular.module('blackjackApp')
       });
 
       $rootScope.$on('close_table',function(){
-        if($scope.player.playerName == 'Dealer') return;
+        if($scope.player.playerName === 'Dealer'){
+          return;
+        }
 
         if(!$scope.bust){
           $scope.total = dealer.evaluatePlayer($scope.player);
           var dealerTotal = dealer.getDealerScore();
-          if ($scope.total == dealerTotal) {
+          if ($scope.total === dealerTotal) {
             $scope.draw = true;
           } else if (dealerTotal <= 21 && $scope.total < dealerTotal) {
             $scope.lose = true;
@@ -51,7 +53,7 @@ angular.module('blackjackApp')
       });
 
       $scope.total = dealer.evaluatePlayer($scope.player);
-      if(game.getPlayerAtSeat(dealer.currentSeatNum()).playerName == $scope.player.playerName){
+      if(game.getPlayerAtSeat(dealer.currentSeatNum()).playerName === $scope.player.playerName){
         $scope.active = true;
       }
       else{

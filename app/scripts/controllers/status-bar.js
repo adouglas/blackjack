@@ -22,7 +22,7 @@ angular.module('blackjackApp')
       $scope.buttonsDisabled = true;
       dealer.playerHits();
       if(dealer.evaluatePlayer() > 21){
-        $scope.information = 'BUST!'
+        $scope.information = 'BUST!';
         $timeout(function() {
           dealer.nextSeat();
           $rootScope.$broadcast('update_table');
@@ -38,7 +38,7 @@ angular.module('blackjackApp')
 
     var init = function () {
       $rootScope.$on('update_table',function(){
-        if(game.getPlayerAtSeat(dealer.currentSeatNum()).playerName == 'Dealer'){
+        if(game.getPlayerAtSeat(dealer.currentSeatNum()).playerName === 'Dealer'){
           $scope.information = game.getPlayerAtSeat(dealer.currentSeatNum()).playerName + ' Turn';
           dealer.playDealer();
           $rootScope.$broadcast('close_table');

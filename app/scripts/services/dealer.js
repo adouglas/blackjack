@@ -50,7 +50,7 @@ angular.module('blackjackApp')
     // Evaluate the players current total
     this.evaluatePlayer = function(player){
       // Get the current player (we could do this when changing the active seat, but we will do it here)
-      var player = player || game.getPlayerAtSeat(activeSeat);
+      player = player || game.getPlayerAtSeat(activeSeat);
       var total = 0;
       var aceCount = 0;
       var tmp;

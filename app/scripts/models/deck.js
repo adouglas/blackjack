@@ -1,3 +1,4 @@
+/* global Card */
 'use strict';
 
 // Define a class to represent a standard deck of cards
@@ -27,7 +28,7 @@ Deck.prototype.shuffle = function() {
 // Deal method: returns a single card or an array of cards
 Deck.prototype.deal = function(n) {
   if (this.cards.length < n) {
-    throw "Out of cards";
+    throw 'Out of cards';
   }
   return this.cards.splice(this.cards.length-n, n);
 };

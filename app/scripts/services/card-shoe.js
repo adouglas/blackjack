@@ -1,3 +1,4 @@
+/* global Deck */
 'use strict';
 
 /**

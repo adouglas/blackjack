@@ -16,8 +16,9 @@ describe('Service: game', function () {
     expect(game.getSeatCount()).toBe(9);
   });
 
+  // Exclude the dealer
   it('should deal 2 cards to all seats', function () {
-    for(var i = 0; i < game.getSeatCount(); i++){
+    for(var i = 0; i < game.getSeatCount()-1; i++){
       expect(game.getPlayerAtSeat(i).cards.length).toBe(2);
     }
   });

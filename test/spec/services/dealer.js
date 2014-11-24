@@ -42,21 +42,21 @@ describe('Service: dealer', function() {
     var dealerTotal = dealer.evaluatePlayer();
 
     // How has the dealer done?
-    console.log('Dealer ' + (dealerTotal > 21 ? 'Busts' : 'has ' + dealerTotal))
+    console.log('Dealer ' + (dealerTotal > 21 ? 'Busts' : 'has ' + dealerTotal));
 
     // Start back at the first player
     dealer.nextSeat();
 
     // Evaluate how each player has done individualy and in regards to the dealer
-    for (var i = 0; i < game.getSeatCount() - 1; i++) {
+    for (i = 0; i < game.getSeatCount() - 1; i++) {
       player = game.getPlayerAtSeat(dealer.currentSeatNum());
       playerTotal = dealer.evaluatePlayer();
 
-      console.log(player.playerName + (playerTotal > 21 ? ' BUSTS' : ' has ' + playerTotal))
+      console.log(player.playerName + (playerTotal > 21 ? ' BUSTS' : ' has ' + playerTotal));
       if (playerTotal <= 21) {
-        if (playerTotal == dealerTotal) {
+        if (playerTotal === dealerTotal) {
           console.log('DRAW');
-          expect(playerTotal).toBe(dealerTota);
+          expect(playerTotal).toBe(dealerTotal);
         } else if (dealerTotal <= 21 && playerTotal < dealerTotal) {
           console.log('Dealer beats ' + player.playerName + ' [LOSS]');
           expect(dealerTotal <= 21).toBe(true);
