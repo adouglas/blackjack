@@ -8,5 +8,4 @@ blackjack
 ```grunt test```
 
 # Run server
-For the frontend
-```grunt server```
+For the frontend: ```grunt server```
